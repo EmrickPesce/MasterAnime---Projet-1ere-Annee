@@ -1,5 +1,6 @@
 # Application MasterAnime de MONTEIL Romain et PESCE Emrick du groupe 6. #
 
+***Le ReadMe était destiné à notre professeur. Vous pouvez vous diriger vers le fichier Contexte.md ou la vidéo de présentation pour plus de détail sur l'application.***
 
 Pour lancer l'application il est préférable que ce soit en mode Administrateur pour récupérer des images dans l'ordinateur, ou écrire et lire des fichiers.
 
