@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Iut.MasterAnime.Winapp.CodePagePrincipale.PagePrincipale"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Iut.MasterAnime.Winapp.CodePagePrincipale"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+
+        <local:ListeBibliothèques DockPanel.Dock="Left" x:Name="LaListeBibliothèque"/>
+
+        <ScrollViewer>
+            <DockPanel>
+                <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Top" Margin="20, 10, 25, 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition MinWidth="145"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid>
+                                <Button Content="Paramètres" Margin="18, 1, 5, 0" HorizontalContentAlignment="Right" Height="25" Click="Paramètres_Click"
+                                        Width="85" Padding="0, 2, 6, 6" FontSize="13" BorderBrush="Black" BorderThickness="2"/>
+                                <Button Style="{StaticResource MaterialDesignFloatingActionButton}"  HorizontalAlignment="Left"
+                                        Height="28" Width="28" BorderBrush="Black" Click="Paramètres_Click">
+                                    <materialDesign:PackIcon Kind="Gear"/>
+                                </Button>
+                            </Grid>
+
+                            <TextBlock Text="{Binding Manager.BibliothèqueSélectionnée.Nom}" TextAlignment="Center" Grid.Column="1"
+                               FontSize="20" Foreground="#2B78E4"/>
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                <TextBox Style="{StaticResource PlaceHolder}" Margin="0, 0, 4, 0" Padding="3,0,3,0" HorizontalAlignment="Stretch"
+                                         Tag="Rechercher une oeuvre" Width="135" x:Name="textBox_Recherche"/>
+                                <Button Style="{DynamicResource DefaultButtons}" Width="26" Height="28" VerticalAlignment="Top" Click="Recherche_Click">
+                                    <materialDesign:PackIcon Kind="Search"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid DockPanel.Dock="Top" Margin="0, 5, 25, 15" MaxWidth="700">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" MinWidth="120"/>
+                                <ColumnDefinition Width="1*" MinWidth="120"/>
+                                <ColumnDefinition Width="1*" MinWidth="120"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0" Width="110" FontSize="13"
+                              Margin="10,0,0,0" SelectionChanged="TriOeuvres_SelectionChanged" materialDesign:ComboBoxAssist.ShowSelectedItem="True"
+                                      x:Name="ordreTri">
+                                <ComboBoxItem>Croissant</ComboBoxItem>
+                                <ComboBoxItem>Décroissant</ComboBoxItem>
+                                <ComboBoxItem>Type</ComboBoxItem>
+                                <ComboBoxItem>Date de sortie</ComboBoxItem>
+                            </ComboBox>
+
+                            <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0" Grid.Column="1" Width="110" FontSize="13"
+                              Margin="10,0,0,0" materialDesign:ComboBoxAssist.ShowSelectedItem="True"
+                                      x:Name="duType" SelectionChanged="TriOeuvres_SelectionChanged">
+                                <ComboBoxItem>Tout</ComboBoxItem>
+                                <ComboBoxItem>Film</ComboBoxItem>
+                                <ComboBoxItem>Série</ComboBoxItem>
+                                <ComboBoxItem>Livre</ComboBoxItem>
+                                <ComboBoxItem>Scan</ComboBoxItem>
+                                <ComboBoxItem>Animé</ComboBoxItem>
+                                <ComboBoxItem>Autre</ComboBoxItem>
+                            </ComboBox>
+
+                            <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0" Grid.Column="2" Width="110"
+                              SelectionChanged="ChangementAffichageOeuvres" FontSize="13" Margin="10,0,0,0" materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                <ComboBoxItem>Icône</ComboBoxItem>
+                                <ComboBoxItem>Ligne</ComboBoxItem>
+                            </ComboBox>
+
+
+                            <Grid Grid.Column="3" Margin="10,0,10,0">
+                                <Button Content="Ajouter une oeuvre" Margin="16, 0, 0, 0" HorizontalContentAlignment="Right" Height="22" Width="115"
+                            Padding="0, 0, 6, 2" FontSize="11" BorderBrush="Black" Background="Orange" Foreground="Black" BorderThickness="2"
+                                        Click="AjouterOeuvre_Click"/>
+                                <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Left"
+                            Height="25" Width="25" BorderBrush="Black" Background="Orange" Foreground="Black" Click="AjouterOeuvre_Click">
+                                    <materialDesign:PackIcon Kind="PlusThick"/>
+                                </Button>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Margin="0,0,0,0">
+                                <Button Content="Modifier la liste" HorizontalContentAlignment="Right" Margin="17,0,0,0" Height="22" Width="95"
+                            Padding="0, 0, 6, 2" FontSize="11" BorderBrush="Black" Background="Orange" Foreground="Black" BorderThickness="2"
+                                        Click="ModifierBibliothèque_Click"/>
+                                <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Left"  
+                            Height="25" Width="25" BorderBrush="Black" Background="Orange" Foreground="Black" Click="ModifierBibliothèque_Click">
+                                    <materialDesign:PackIcon Kind="Gear"/>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </DockPanel>
+                </ScrollViewer>
+
+
+                <ContentControl x:Name="AffichageOeuvres" HorizontalAlignment="Stretch"/>
+
+
+            </DockPanel>
+        </ScrollViewer>
+
+    </DockPanel>
+
+</UserControl>

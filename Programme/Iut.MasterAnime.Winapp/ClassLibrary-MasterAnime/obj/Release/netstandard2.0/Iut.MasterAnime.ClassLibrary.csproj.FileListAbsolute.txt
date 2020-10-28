@@ -1,0 +1,9 @@
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\bin\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.deps.json
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\bin\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.dll
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\bin\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.pdb
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\obj\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.AssemblyInfoInputs.cache
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\obj\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.AssemblyInfo.cs
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\obj\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\obj\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.dll
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\obj\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.pdb
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\ClassLibrary-MasterAnime\obj\Release\netstandard2.0\Iut.MasterAnime.ClassLibrary.csprojAssemblyReference.cache

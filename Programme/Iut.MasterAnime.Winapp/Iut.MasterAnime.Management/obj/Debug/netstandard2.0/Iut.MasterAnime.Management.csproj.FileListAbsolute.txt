@@ -1,0 +1,14 @@
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.Management.deps.json
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.Management.dll
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.Management.pdb
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.ClassLibrary.dll
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.Persistance.dll
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.ClassLibrary.pdb
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\bin\Debug\netstandard2.0\Iut.MasterAnime.Persistance.pdb
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.csprojAssemblyReference.cache
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.csproj.CoreCompileInputs.cache
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.AssemblyInfoInputs.cache
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.AssemblyInfo.cs
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.csproj.CopyComplete
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.dll
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Management\obj\Debug\netstandard2.0\Iut.MasterAnime.Management.pdb

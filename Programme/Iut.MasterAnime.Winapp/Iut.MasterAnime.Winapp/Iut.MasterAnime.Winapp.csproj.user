@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CodeAffichageOeuvre\AffichageOeuvre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeCréationBibliothèque\CréationBibliothèque.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeCréationBibliothèque\SélectionAjoutOeuvresCréation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeCréationOeuvre\CréationOeuvre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeModificationOeuvre\ModificationOeuvre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeModifierBibliothèque\AjouterUneOeuvre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeModifierBibliothèque\SélectionAjoutOeuvresModification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeModifierBibliothèque\SélectionSuppressionOeuvres.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePagePrincipale\AfficheIcone.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePagePrincipale\ListeBibliothèques.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePageRecherche\AfficheIconeRecherche.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePagePrincipale\AfficheLigne.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePageRecherche\AfficheLigneRecherche.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePageRecherche\AucuneOeuvreTrouvée.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeModifierBibliothèque\ModifierBibliothèque.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePagePrincipale\PagePrincipale.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodePageRecherche\PageRecherche.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CodeParametres\Paramètres.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CodeAffichageOeuvre\AffichageOeuvre.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeCréationBibliothèque\CréationBibliothèque.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeCréationBibliothèque\SélectionAjoutOeuvresCréation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeCréationOeuvre\CréationOeuvre.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeModificationOeuvre\ModificationOeuvre.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeModifierBibliothèque\AjouterUneOeuvre.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeModifierBibliothèque\SélectionAjoutOeuvresModification.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeModifierBibliothèque\SélectionSuppressionOeuvres.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePagePrincipale\AfficheIcone.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePagePrincipale\ListeBibliothèques.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePageRecherche\AfficheIconeRecherche.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePagePrincipale\AfficheLigne.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePageRecherche\AfficheLigneRecherche.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePageRecherche\AucuneOeuvreTrouvée.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeParametres\Paramètres.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodeModifierBibliothèque\ModifierBibliothèque.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePagePrincipale\PagePrincipale.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CodePageRecherche\PageRecherche.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

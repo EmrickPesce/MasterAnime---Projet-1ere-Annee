@@ -1,0 +1,20 @@
+﻿Iut.MasterAnime.Winapp
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Winapp\obj\Release\netcoreapp3.1\
+Iut.MasterAnime.Winapp
+none
+false
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
+C:\Users\Emrick\Desktop\cours\Projet\Projet - Site\Programme\Iut.MasterAnime.Winapp\Iut.MasterAnime.Winapp\App.xaml
+19854904526
+
+26-1021814004
+214674603515
+CodeAffichageOeuvre\AffichageOeuvre.xaml;CodeCréationBibliothèque\CréationBibliothèque.xaml;CodeCréationBibliothèque\SélectionAjoutOeuvresCréation.xaml;CodeCréationOeuvre\CréationOeuvre.xaml;CodeModificationOeuvre\ModificationOeuvre.xaml;CodeModifierBibliothèque\AjouterUneOeuvre.xaml;CodeModifierBibliothèque\ModifierBibliothèque.xaml;CodeModifierBibliothèque\SélectionAjoutOeuvresModification.xaml;CodeModifierBibliothèque\SélectionSuppressionOeuvres.xaml;CodePagePrincipale\AfficheIcone.xaml;CodePagePrincipale\AfficheLigne.xaml;CodePagePrincipale\ListeBibliothèques.xaml;CodePagePrincipale\PagePrincipale.xaml;CodePageRecherche\AfficheIconeRecherche.xaml;CodePageRecherche\AfficheLigneRecherche.xaml;CodePageRecherche\AucuneOeuvreTrouvée.xaml;CodePageRecherche\PageRecherche.xaml;CodeParametres\Paramètres.xaml;MainWindow.xaml;
+
+True
+

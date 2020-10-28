@@ -1,0 +1,76 @@
+﻿<Window x:Class="Iut.MasterAnime.Winapp.CodeCréationBibliothèque.CréationBibliothèque"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Iut.MasterAnime.Winapp.CodeCréationBibliothèque"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" x:Name="CréationBiblio"
+        Title="Création d'une liste" Height="230" Width="485">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="auto" MaxWidth="485">
+        <Grid Margin="0,10,0,0" DataContext="{Binding NouvelleBibliothèque}" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.2*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel>
+                <Image Source="{Binding Image, Converter={StaticResource StringToImageConverter}}" MaxWidth="160" MaxHeight="100" Margin="0,5,0,10"/>
+                <TextBlock Text="Importer une image :" TextAlignment="Center" Foreground="#2B78E4" FontSize="14" Margin="10,0,50,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,5,5,0">
+                    <TextBox Width="140" Margin="2,3,3,3" Text="{Binding Image}" Height="28" />
+                    <Button Content="Explorer" Style="{StaticResource DefaultButtons}" Padding="3,0,3,2" Click="Explorer_Click"
+                        Background="White" Foreground="Black" BorderBrush="Black" BorderThickness="2" Height="28" Margin="0,3,3,3"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+
+                <TextBlock Text="Donner un nom :" Foreground="#2B78E4" FontSize="14" Margin="20,3,0,0"/>
+                <TextBox Text="{Binding Nom, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Tag="Entrez un nom"  Margin="0,5,20,5" Width="200"
+                         Style="{StaticResource PlaceHolder}" Height="28"/>
+
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Margin="13,10,0,0" HorizontalAlignment="Left">
+                        <Button Content="Ajouter des oeuvres à la liste" Margin="15, 0, 0, 0" HorizontalContentAlignment="Right" FontSize="14" HorizontalAlignment="Left"
+                    Height="25" Width="205" Padding="0,0,6,3" Background="Yellow" BorderBrush="Black" Foreground="Black" Click="AjoutOeuvres_Click"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Left"
+                    Height="28" Width="28" Background="Yellow" BorderBrush="Black" Foreground="Black" Click="AjoutOeuvres_Click">
+                            <materialDesign:PackIcon Kind="PlusThick"/>
+                        </Button>
+                    </Grid>
+
+                    <TextBlock Text="{Binding AAjouter.Count, ElementName=CréationBiblio, StringFormat=’{0} oeuvre(s) ont été ajoutée(s)’}"
+                               Grid.Row="1" HorizontalAlignment="Right" Margin="0,5,15,0" Foreground="{DynamicResource CouleurTexte}"/>
+                    
+                    <Grid Margin="15,15,0,0" Grid.Row="2">
+                        <Button Content="Annuler" Margin="15, 1, 0, 0" HorizontalContentAlignment="Right" FontSize="14" HorizontalAlignment="Left"
+                    Height="25" Width="75" Padding="0,0,6,3" Background="DarkViolet" BorderBrush="Black" Click="Annuler_Click"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Left"
+                    Height="28" Width="28" Background="DarkViolet" BorderBrush="Black" Click="Annuler_Click">
+                            <materialDesign:PackIcon Kind="CloseThick"/>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Margin="115,15,15,0">
+                        <Button Content="Sauvegarder" Margin="0,1, 14, 0" HorizontalContentAlignment="Left" FontSize="14" HorizontalAlignment="Right"
+                    Height="25" Width="105" Padding="6,0,0,4" Background="green" BorderBrush="Black" Click="Sauvegarder_Click"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}" HorizontalAlignment="Right"
+                    Height="28" Width="28" Background="Green" BorderBrush="Black" Click="Sauvegarder_Click">
+                            <materialDesign:PackIcon Kind="ContentSave"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

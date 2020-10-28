@@ -1,0 +1,395 @@
+﻿<UserControl x:Class="Iut.MasterAnime.Winapp.CodeCréationOeuvre.CréationOeuvre"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Iut.MasterAnime.Winapp.CodeCréationOeuvre"
+             xmlns:classLibrary="clr-namespace:Iut.MasterAnime.ClassLibrary;assembly=Iut.MasterAnime.ClassLibrary"
+             xmlns:pagePrincipale="clr-namespace:Iut.MasterAnime.Winapp.CodePagePrincipale"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" x:Name="CréationDOeuvre"
+             d:DesignHeight="486" d:DesignWidth="861">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{DynamicResource CouleurTexte}"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <DockPanel>
+
+        <pagePrincipale:ListeBibliothèques DockPanel.Dock="Left" x:Name="LaListeBibliothèque"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <StackPanel>
+                <ScrollViewer VerticalScrollBarVisibility="Disabled">
+                    <Grid Height="75">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition MinWidth="210"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Width="110" Margin="20,15,10,10">
+                            <Button Content="Paramètres" Margin="16, 1, 5, 0" HorizontalContentAlignment="Right" Height="25" Click="Paramètres_Click"
+                                        Width="85" Padding="0, 2, 6, 6" FontSize="13" BorderBrush="Black" BorderThickness="2"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"  HorizontalAlignment="Left"
+                                        Height="28" Width="28" BorderBrush="Black" Click="Paramètres_Click">
+                                <materialDesign:PackIcon Kind="Gear"/>
+                            </Button>
+                        </Grid>
+
+                        <TextBox Grid.Column="1" Height="30" TextAlignment="Center" 
+                                 Text="{Binding Oeuvre.Nom, ElementName=CréationDOeuvre, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                 FontSize="14" Margin="0,10,0,0" Width="200"/>
+
+                        <Grid Grid.Column="2" Width="105" Margin="10,15,15,10">
+                            <Button Content="Supprimer" Margin="15, 1, 5, 0" HorizontalContentAlignment="Right" Height="25" Background="Red"
+                                        Width="85" Padding="0, 2, 6, 6" FontSize="13" BorderBrush="Black" BorderThickness="2" Click="Supprimer_Click"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionButton}"  HorizontalAlignment="Left"
+                                        Height="28" Width="28" BorderBrush="Black" Background="Red" Click="Supprimer_Click">
+                                <materialDesign:PackIcon Kind="Trash"/>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+
+                <WrapPanel HorizontalAlignment="Center">
+                    <Grid HorizontalAlignment="Center" Visibility="Hidden">
+                        <TextBlock Text="Importer une image :" TextAlignment="Left" FontSize="14" Margin="10,0,0,25"
+                               VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,30,5,0" VerticalAlignment="Center">
+                            <TextBox Width="140" Margin="2,0,3,3"/>
+                            <Button Content="Explorer" Style="{StaticResource DefaultButtons}" Padding="3,0,3,2" Margin="0,0,0,3"
+                                BorderThickness="2"/>
+                        </StackPanel>
+                    </Grid>
+                    <WrapPanel>
+                        <Image Source="{Binding Oeuvre.Image, ElementName=CréationDOeuvre, Converter={StaticResource StringToImageConverter}}" Width="200" Height="150"
+                               HorizontalAlignment="Center" Margin="15,5,0,0"/>
+
+                        <Grid HorizontalAlignment="Center" Margin="10,0,0,0">
+                            <TextBlock Text="Importer une image :" TextAlignment="Left" Foreground="#2B78E4" FontSize="14" Margin="10,0,0,25"
+                               VerticalAlignment="Center"/>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,30,5,0" 
+                                VerticalAlignment="Center">
+                                <TextBox Width="140" Margin="2,0,3,3" Text="{Binding Oeuvre.Image, ElementName=CréationDOeuvre}"/>
+                                <Button Content="Explorer" Style="{StaticResource DefaultButtons}" Padding="3,0,3,2" Margin="0,0,0,3"
+                                Background="White" Foreground="Black" BorderBrush="Black" BorderThickness="2" Click="Explorer_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </WrapPanel>
+                </WrapPanel>
+
+
+
+
+                <ContentControl Content="{Binding Oeuvre, ElementName=CréationDOeuvre}" DockPanel.Dock="Top">
+                    <ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type classLibrary:Autre}">
+                            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,55,0">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="11" Margin="5,5,5,15" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0" Width="75"
+                                                Margin="0,0,5,10" x:Name="Type" SelectionChanged="Type_SelectionChanged"
+                                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                            <ComboBoxItem>Autre</ComboBoxItem>
+                                            <ComboBoxItem>Film</ComboBoxItem>
+                                            <ComboBoxItem>Série</ComboBoxItem>
+                                            <ComboBoxItem>Livre</ComboBoxItem>
+                                            <ComboBoxItem>Scan</ComboBoxItem>
+                                            <ComboBoxItem>Animé</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Créateur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Créateur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" FontSize="11"
+                                                 MinWidth="100" MaxWidth="150" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="5">
+                                        <TextBlock Text="Date de sortie : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <Border Background="{DynamicResource CouleurDeFond}" BorderThickness="2" BorderBrush="{DynamicResource CouleurBordures}">
+                                            <DatePicker FontSize="11" SelectedDate="{Binding Sortie, StringFormat={}{0:dd/MM/yyyy}}" VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource CouleurTexte}" Margin="3,0"/>
+                                        </Border>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type classLibrary:Film}">
+                            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,55,0">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="11" Margin="5,5,5,15" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="1" Width="75"
+                                                Margin="0,0,5,10" x:Name="Type" SelectionChanged="Type_SelectionChanged"
+                                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                            <ComboBoxItem>Autre</ComboBoxItem>
+                                            <ComboBoxItem>Film</ComboBoxItem>
+                                            <ComboBoxItem>Série</ComboBoxItem>
+                                            <ComboBoxItem>Livre</ComboBoxItem>
+                                            <ComboBoxItem>Scan</ComboBoxItem>
+                                            <ComboBoxItem>Animé</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Réalisateur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Réalisateur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Date de sortie : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <Border Background="{DynamicResource CouleurDeFond}" BorderThickness="2" BorderBrush="{DynamicResource CouleurBordures}">
+                                            <DatePicker FontSize="11" SelectedDate="{Binding Sortie, StringFormat={}{0:dd/MM/yyyy}}" VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource CouleurTexte}" Margin="3,0"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Studio : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Studio, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type classLibrary:Série}">
+                            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,55,0">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="11" Margin="5,5,5,15" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="2" Width="75"
+                                                Margin="0,0,5,10" x:Name="Type" SelectionChanged="Type_SelectionChanged"
+                                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                            <ComboBoxItem>Autre</ComboBoxItem>
+                                            <ComboBoxItem>Film</ComboBoxItem>
+                                            <ComboBoxItem>Série</ComboBoxItem>
+                                            <ComboBoxItem>Livre</ComboBoxItem>
+                                            <ComboBoxItem>Scan</ComboBoxItem>
+                                            <ComboBoxItem>Animé</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Réalisateur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Réalisateur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Date de sortie : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <Border Background="{DynamicResource CouleurDeFond}" BorderThickness="2" BorderBrush="{DynamicResource CouleurBordures}">
+                                            <DatePicker FontSize="11" SelectedDate="{Binding Sortie, StringFormat={}{0:dd/MM/yyyy}}" VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource CouleurTexte}" Margin="3,0"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Studio : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Studio, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type classLibrary:Livre}">
+                            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,55,0">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="11" Margin="5,5,5,15" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="3" Width="75"
+                                                Margin="0,0,5,10" x:Name="Type" SelectionChanged="Type_SelectionChanged"
+                                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                            <ComboBoxItem>Autre</ComboBoxItem>
+                                            <ComboBoxItem>Film</ComboBoxItem>
+                                            <ComboBoxItem>Série</ComboBoxItem>
+                                            <ComboBoxItem>Livre</ComboBoxItem>
+                                            <ComboBoxItem>Scan</ComboBoxItem>
+                                            <ComboBoxItem>Animé</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Auteur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Auteur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Date de sortie : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <Border Background="{DynamicResource CouleurDeFond}" BorderThickness="2" BorderBrush="{DynamicResource CouleurBordures}">
+                                            <DatePicker FontSize="11" SelectedDate="{Binding Sortie, StringFormat={}{0:dd/MM/yyyy}}" VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource CouleurTexte}" Margin="3,0"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Éditeur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Éditeur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type classLibrary:Scan}">
+                            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,55,0">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="11" Margin="5,5,5,15" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="4" Width="75"
+                                                Margin="0,0,5,10" x:Name="Type" SelectionChanged="Type_SelectionChanged"
+                                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                            <ComboBoxItem>Autre</ComboBoxItem>
+                                            <ComboBoxItem>Film</ComboBoxItem>
+                                            <ComboBoxItem>Série</ComboBoxItem>
+                                            <ComboBoxItem>Livre</ComboBoxItem>
+                                            <ComboBoxItem>Scan</ComboBoxItem>
+                                            <ComboBoxItem>Animé</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Auteur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Auteur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Date de sortie : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <Border Background="{DynamicResource CouleurDeFond}" BorderThickness="2" BorderBrush="{DynamicResource CouleurBordures}">
+                                            <DatePicker FontSize="11" SelectedDate="{Binding Sortie, StringFormat={}{0:dd/MM/yyyy}}" VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource CouleurTexte}" Margin="3,0"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Éditeur : " FontSize="11" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                        <TextBox Text="{Binding Éditeur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center" Foreground="{DynamicResource CouleurTexte}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type classLibrary:Animé}">
+                            <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,55,0">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="11" Margin="5,5,5,15" VerticalAlignment="Center"
+                                                    Foreground="{DynamicResource CouleurTexte}"/>
+                                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="5" Width="75"
+                                                Margin="0,0,5,10" x:Name="Type" SelectionChanged="Type_SelectionChanged"
+                                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True">
+                                            <ComboBoxItem>Autre</ComboBoxItem>
+                                            <ComboBoxItem>Film</ComboBoxItem>
+                                            <ComboBoxItem>Série</ComboBoxItem>
+                                            <ComboBoxItem>Livre</ComboBoxItem>
+                                            <ComboBoxItem>Scan</ComboBoxItem>
+                                            <ComboBoxItem>Animé</ComboBoxItem>
+                                        </ComboBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Auteur : " FontSize="11" VerticalAlignment="Center"/>
+                                        <TextBox Text="{Binding Auteur, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Date de sortie : " FontSize="11" VerticalAlignment="Center"/>
+                                        <Border Background="{DynamicResource CouleurDeFond}" BorderThickness="2" BorderBrush="{DynamicResource CouleurBordures}">
+                                            <DatePicker FontSize="11" SelectedDate="{Binding Sortie, StringFormat={}{0:dd/MM/yyyy}}" VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource CouleurTexte}" Margin="3,0"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="5,5,5,15">
+                                        <TextBlock Text="Studio : " FontSize="11" VerticalAlignment="Center"/>
+                                        <TextBox Text="{Binding  Studio, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                                 FontSize="11" MinWidth="100" MaxWidth="150" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ContentControl.Resources>
+                </ContentControl>
+
+                <ItemsControl Margin="10,0,0,0" HorizontalAlignment="Center"
+                              ItemsSource="{Binding Oeuvre.InformationsComplémentaires, ElementName=CréationDOeuvre}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,10,10,0">
+                                <TextBox Text="{Binding Key.LeString, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Padding="3,0,3,0" MinWidth="100" MaxWidth="150" FontSize="11"/>
+                                <TextBlock Text=" : " VerticalAlignment="Center" Padding="0,0,0,1" FontSize="11"/>
+                                <TextBox Text="{Binding Value.LeString, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Padding="3,0,3,0" MinWidth="100" MaxWidth="150" FontSize="11"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <Grid Margin="0,3,0,0">
+                    <TextBlock Text="Synopsis" Margin="33,15,10,4" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                    <Grid Width="170" Margin="10,5,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Button Content="Ajouter des informations" Margin="10, 1, 5, 0" HorizontalContentAlignment="Right" Height="25" 
+                                        Width="145" Padding="0, 2, 6, 6" FontSize="11" BorderBrush="Black" BorderThickness="2" Click="AjoutInfos_Click"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}"  HorizontalAlignment="Left"
+                                        Height="26" Width="26" BorderBrush="Black" Click="AjoutInfos_Click">
+                            <materialDesign:PackIcon Kind="PlusThick"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <TextBox Tag="Synopsis" MinHeight="50" Height="auto" Padding="3,1,3,2" Margin="25,0,20,0" FontSize="12"
+                         Text="{Binding Oeuvre.Synopsis, ElementName=CréationDOeuvre}"
+                         TextWrapping="Wrap" Style="{StaticResource PlaceHolderOeuvre}" HorizontalAlignment="Stretch"/>
+
+                <StackPanel Margin="14,5,5,0">
+                    <TextBlock Text="Commentaire" Margin="15,0,0,4" FontSize="14"/>
+                    <TextBox Tag="Commentaire personnel" Height="auto" MinHeight="40" Padding="3,1,3,2" Margin="11,0,15,0" FontSize="12"
+                             Text="{Binding Oeuvre.Commentaire, ElementName=CréationDOeuvre}"
+                             TextWrapping="Wrap" Style="{StaticResource PlaceHolderOeuvre}" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+
+                <WrapPanel HorizontalAlignment="Center">
+                    <ComboBox HorizontalAlignment="Center" Width="140" Margin="10" Height="28" Padding="8,5,0,0" x:Name="AjoutABibliothèques"
+                                  Grid.Column="1" ItemsSource="{Binding Manager.LesBibliothèques, ElementName=CréationDOeuvre}"
+                                  materialDesign:ComboBoxAssist.ShowSelectedItem="True" materialDesign:HintAssist.Hint="Ajouter à"
+                                  SelectionChanged="AjoutABibliothèques_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" x:Name="leStackCombobox">
+                                    <materialDesign:PackIcon Kind="{DynamicResource LePackIcon}" x:Name="lIcon" Foreground="#2B78E4"/>
+                                    <TextBlock Text="{Binding Nom}" Margin="6,0,0,0" x:Name="leTextBlock"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+
+                    <Grid Grid.Column="2" Width="120" Margin="30,10,15,10" HorizontalAlignment="Left">
+                        <Button Content="Sauvegarder" Margin="18, 1, 5, 0" HorizontalContentAlignment="Right" Height="25" Background="Green" Click="Sauvegarder_Click"
+                                        Width="95" Padding="0, 2, 6, 6" FontSize="13" BorderBrush="Black" BorderThickness="2"/>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionButton}"  HorizontalAlignment="Left" Click="Sauvegarder_Click"
+                                        Height="28" Width="28" BorderBrush="Black" Background="Green">
+                            <materialDesign:PackIcon Kind="ContentSave"/>
+                        </Button>
+                    </Grid>
+                </WrapPanel>
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </DockPanel>
+</UserControl>

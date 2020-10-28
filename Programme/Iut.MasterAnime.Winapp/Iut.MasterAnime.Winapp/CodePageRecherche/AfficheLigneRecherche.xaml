@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Iut.MasterAnime.Winapp.CodePageRecherche.AfficheLigneRecherche"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Iut.MasterAnime.Winapp.CodePageRecherche"
+             mc:Ignorable="d" x:Name="AffichageLigneRecherche"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <ItemsControl Margin="20, 5, 10, 0" ItemsSource="{Binding Recherche}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Button Style="{StaticResource DefaultButtons}" Margin="0, 5" Background="{DynamicResource CouleurDeFond}" Tag="{Binding Nom}"
+                        BorderBrush="{DynamicResource CouleurDeFond}" HorizontalAlignment="Left" Click="BouttonOeuvre_Click">
+                    <DockPanel HorizontalAlignment="Left">
+                        <Image x:Name="lImage" Source="{Binding Image, Converter={StaticResource StringToImageConverter}}" DockPanel.Dock="Left" MaxHeight="120"
+                               MaxWidth="120" Margin="0, 0, 10, 0"/>
+                        <TextBlock x:Name="LeNom" Text="{Binding Nom}" DockPanel.Dock="Top" Margin="10, 6, 0, 5" FontSize="14" Foreground="{DynamicResource CouleurTexte}"/>
+                        <TextBlock x:Name="LeCommentaire" Text="{Binding Commentaire}" MaxWidth="460" MaxHeight="65" HorizontalAlignment="Left" TextWrapping="Wrap"
+                                   FontSize="11" VerticalAlignment="Top" LineHeight="16" Margin="5, 0, 0, 0" Foreground="{DynamicResource CouleurTexte}"/>
+                    </DockPanel>
+                </Button>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+    
+</UserControl>

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "PCKQ+HjOyWaUn/0HsvO8gMwXhWcFRLr7mwMeAmxXj87mps35LYaiQJPspUlno44QPVYrJdj3L56IRfujWlskpQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Emrick\\Desktop\\cours\\Projet\\Projet - Site\\Programme\\Iut.MasterAnime.Winapp\\ClassLibrary-MasterAnime\\Iut.MasterAnime.ClassLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emrick\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Emrick\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Emrick\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

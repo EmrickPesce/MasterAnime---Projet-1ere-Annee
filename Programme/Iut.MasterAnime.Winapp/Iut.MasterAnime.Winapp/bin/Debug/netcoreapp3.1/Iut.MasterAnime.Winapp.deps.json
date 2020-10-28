@@ -1,0 +1,111 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Iut.MasterAnime.Winapp/1.0.0": {
+        "dependencies": {
+          "Iut.MasterAnime.ClassLibrary": "1.0.0",
+          "Iut.MasterAnime.Management": "1.0.0",
+          "Iut.MasterAnime.Persistance": "1.0.0",
+          "MaterialDesignThemes": "3.1.0"
+        },
+        "runtime": {
+          "Iut.MasterAnime.Winapp.dll": {}
+        }
+      },
+      "MaterialDesignColors/1.2.3": {
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignColors.dll": {
+            "assemblyVersion": "1.2.3.1244",
+            "fileVersion": "1.2.3.1244"
+          }
+        }
+      },
+      "MaterialDesignThemes/3.1.0": {
+        "dependencies": {
+          "MaterialDesignColors": "1.2.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "3.1.0.1244",
+            "fileVersion": "3.1.0.1244"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/4.7.0": {},
+      "Iut.MasterAnime.ClassLibrary/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "Iut.MasterAnime.ClassLibrary.dll": {}
+        }
+      },
+      "Iut.MasterAnime.Management/1.0.0": {
+        "dependencies": {
+          "Iut.MasterAnime.ClassLibrary": "1.0.0",
+          "Iut.MasterAnime.Persistance": "1.0.0",
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "Iut.MasterAnime.Management.dll": {}
+        }
+      },
+      "Iut.MasterAnime.Persistance/1.0.0": {
+        "dependencies": {
+          "Iut.MasterAnime.ClassLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Iut.MasterAnime.Persistance.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Iut.MasterAnime.Winapp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MaterialDesignColors/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7qvpcg98V6e1SKSodbsW31IF9IFBLMFs27xI3IzMA2vuLf1YpippfqnixdKmxlJCUwtOhQP4XkJNLJCQuZlTiA==",
+      "path": "materialdesigncolors/1.2.3",
+      "hashPath": "materialdesigncolors.1.2.3.nupkg.sha512"
+    },
+    "MaterialDesignThemes/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fFGxnXtAFxrwCYdtZxhkGOX4lRwI9Op6usK7+jU5/MLWRXrnz4u3+xlixgIbl4JAjlE+oWHBrTFBa/iSA3062A==",
+      "path": "materialdesignthemes/3.1.0",
+      "hashPath": "materialdesignthemes.3.1.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "hashPath": "system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    },
+    "Iut.MasterAnime.ClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Iut.MasterAnime.Management/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Iut.MasterAnime.Persistance/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
